@@ -7,7 +7,7 @@ class GreatestCommonDivisor {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt(), b = sc.nextInt();
 
-        while(a!=0 && b!=0) // until either one of them is 0
+        while(a!=0 && b!=0)
         {
             int c = b;
             b = a%b;
