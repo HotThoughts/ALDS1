@@ -91,11 +91,8 @@ class DoublyLinkedList {
                 new InputStreamReader(System.in));
 
 
-
         int n = Integer.parseInt(br.readLine());
         DoublyLinkedList DL = new  DoublyLinkedList();
-
-
 
         for (int i = 0; i < n; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
