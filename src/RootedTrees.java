@@ -51,7 +51,6 @@ class RootedTrees {
 
     static class Node{
         int id, parent, depth = 0;
-        String type;
         ArrayList<Integer> children = new ArrayList<>();
 
         Node (int id){

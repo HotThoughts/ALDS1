@@ -12,17 +12,14 @@ class ReconstructionTree {
     static ArrayList<Integer> postorder = new ArrayList<>();
 
     static void reconstruction(int l, int r){
-        if (l >= r) return;
-
-        int root = preorder.get(pos++);
-        int m = inorder.indexOf(root);
-
-        reconstruction(l,m);
-        reconstruction(m+1,r);
-
-        postorder.add(root);
+        if (l < r) {
+            int root = preorder.get(pos++);
+            int m = inorder.indexOf(root);
+            reconstruction(l, m);
+            reconstruction(m + 1, r);
+            postorder.add(root);
+        }
     }
-
 
     public static void main(String[] args) {
         MyScanner sc = new MyScanner();
@@ -32,14 +29,9 @@ class ReconstructionTree {
         for (int i = 0; i < n; i++) inorder.add(i,sc.nextInt());
 
         reconstruction(0,n);
-
         StringBuilder sb = new StringBuilder().append(postorder.get(0));
-
-        for (int i = 1; i < n; i++) {
-            sb.append(" ").append(postorder.get(i));
-        }
+        for (int i = 1; i < n; i++) sb.append(" ").append(postorder.get(i));
         System.out.println(sb.toString());
-
     }
 
     static class MyScanner {
